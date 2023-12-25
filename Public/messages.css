@@ -1,0 +1,238 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .search-bar {
+    margin-bottom: 20px;
+  }
+  
+  .search-bar input {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .search-bar button {
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .chat-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .chat-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    transition: background-color 0.3s ease;
+  }
+  
+  .chat-item:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .chat-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  .chat-text {
+    margin-left: 10px;
+  }
+  
+  .chat-text h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .chat-text p {
+    margin: 0;
+    font-size: 14px;
+    color: #777;
+  }
+  
+  .chat-text p:last-child {
+    margin-top: 4px;
+  }
+
+
+
+  
+  
+  .sidebar {
+    width: 80px;
+    background-color: #333;
+    color: #fff;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: width 0.3s;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+  }
+  
+  .menu-item:hover {
+    background-color: #555;
+  }
+  
+  .menu-item a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+  }
+  
+  .menu-item img {
+    width: 24px;
+    height: 24px;
+    object-fit: cover;
+  }
+  
+  
+  .menu-item a span {
+    margin-top: 4px;
+  }
+  
+  .toggle-button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 3;
+  }
+  
+  .sidebar.closed {
+    width: 0;
+  }
+  
+  .sidebar.closed .menu-item span {
+    display: none;
+  }
+  
+  .sidebar:hover {
+    width: 200px;
+  }
+  
+  .sidebar:hover .menu-item span {
+    display: inline-block;
+  }
+  
+  .menu-item:nth-child(4) span {
+    font-size: 12px;
+  }
+  
+  .sidebar .profile-picture img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+.notification-popup {
+    display: none;
+    position: fixed;
+    top: 180px; /* Adjust the top value as needed */
+    right: 120px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+    max-height: 300px; /* Adjust the max-height value as needed */
+    overflow-y: auto;
+  }
+  
+  .notification-popup.show {
+    display: block;
+  }
+  
+  .notification-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .notification-content img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .notification-content p {
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  #notification-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #notification-list li {
+    margin-bottom: 10px;
+  }
+  
+  #close-popup {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  

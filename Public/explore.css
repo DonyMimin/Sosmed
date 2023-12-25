@@ -1,0 +1,258 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 60px; /* Adjust the padding-top value to make space for the fixed header */
+  }
+
+  .stories {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding: 10px 0;
+  }
+  
+  .story {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
+    flex-shrink: 0; /* Prevent stories from shrinking */
+  }
+  
+  .story img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1; /* Set a higher z-index to make the header appear above the grid */
+  }
+  
+  .search-bar {
+    width: 300px;
+    margin: 0 auto;
+  }
+  
+  .search-bar input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .main {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 80px; /* Adjust the margin-top value to account for the fixed header */
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+  }
+  
+  .grid-item {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    padding: 5px;
+  }
+  
+  .grid-item img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1; /* Set a higher z-index to make the footer appear above the grid */
+  }
+  
+  .menu-item img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .menu-item.active img {
+    filter: brightness(0.5);
+  }
+  
+  .sidebar {
+    width: 80px;
+    background-color: #333;
+    color: #fff;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: width 0.3s;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+  }
+  
+  .menu-item:hover {
+    background-color: #555;
+  }
+  
+  .menu-item a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+  }
+  
+  .menu-item a span {
+    margin-top: 4px;
+  }
+  
+  
+.toggle-button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 3;
+}
+
+.sidebar.closed {
+  width: 0;
+}
+
+.sidebar.closed .menu-item span {
+  display: none;
+}
+
+.sidebar:hover {
+  width: 200px;
+}
+
+.sidebar:hover .menu-item span {
+  display: inline-block;
+}
+
+.menu-item:nth-child(4) span {
+  font-size: 12px;
+}
+
+.toggle-button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 3;
+}
+
+.notification-popup {
+  display: none;
+  position: fixed;
+  top: 180px; /* Adjust the top value as needed */
+  right: 120px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+  max-height: 300px; /* Adjust the max-height value as needed */
+  overflow-y: auto;
+}
+
+.notification-popup.show {
+  display: block;
+}
+
+.notification-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.notification-content img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.notification-content p {
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#notification-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#notification-list li {
+  margin-bottom: 10px;
+}
+
+#close-popup {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}

@@ -1,0 +1,380 @@
+.story:nth-child(1) img {
+  border: 5px solid;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+  background-clip: padding-box;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+}
+
+/* Username */
+.username {
+  font-size: 16px;
+  padding-left: 10px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.container1 {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px;
+  /* background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-bottom: 10px solid black; */
+}
+
+.logo img {
+  height: 30px;
+}
+
+.stories {
+  display: flex;
+}
+
+.story {
+  display: flex;
+  align-items: center;
+  margin-right: 18px;
+}
+
+.story img {
+  width: 82px;
+  height: 82px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.story-text {
+  margin-left: 10px;
+}
+
+.main {
+  background-color: #fff;
+  padding: 20px;
+  overflow-y: auto;
+  max-height: calc(100vh - 160px);
+}
+
+.post {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.profile-picture img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.post-content {
+  position: relative;
+}
+
+.post-content img {
+  width: 100%;
+  height: auto;
+  max-width: 800px; /* Adjust this value to your desired maximum width */
+  max-height: 600px; /* Adjust this value to your desired maximum height */
+}
+
+
+.post-caption {
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.post-actions {
+  position: absolute;
+  bottom: -25px;
+  right: 0;
+}
+
+.post-actions button {
+  width: 100%;
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item img {
+  width: 20px;
+  height: 20px;
+}
+
+.menu-item.active img {
+  filter: brightness(0.5);
+}
+
+.sidebar {
+  width: 80px;
+  background-color: #333;
+  color: #fff;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: width 0.3s;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.menu-item:hover {
+  background-color: #555;
+}
+
+.menu-item a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 12px;
+}
+
+.menu-item a span {
+  margin-top: 4px;
+}
+
+.notification-icon {
+  position: relative;
+}
+
+.notification-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: #fff;
+  font-size: 10px;
+  padding: 2px 4px;
+  border-radius: 50%;
+}
+
+/* Add styles for the toggle button and popup */
+
+.toggle-button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 3;
+}
+
+.notification-popup {
+  display: none;
+  position: fixed;
+  top: 180px; /* Adjust the top value as needed */
+  right: 120px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+  max-height: 300px; /* Adjust the max-height value as needed */
+  overflow-y: auto;
+}
+
+.notification-popup.show {
+  display: block;
+}
+
+.notification-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.notification-content img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.notification-content p {
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#notification-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#notification-list li {
+  margin-bottom: 10px;
+}
+
+
+#close-popup {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Add media query for responsiveness */
+
+@media screen and (max-width: 800px) {
+  .container {
+    max-width: 100%;
+  }
+
+  .sidebar {
+    width: 60px;
+  }
+
+  .sidebar span {
+    display: none;
+  }
+
+  .sidebar.closed {
+    width: 0;
+  }
+
+  .sidebar.closed span {
+    display: none;
+  }
+
+  .sidebar:hover {
+    width: 200px;
+  }
+
+  .sidebar:hover span {
+    display: inline-block;
+  }
+}
+
+/* Existing styles */
+
+.sidebar {
+  width: 80px;
+  background-color: #333;
+  color: #fff;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: width 0.3s;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.menu-item img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.menu-item span {
+  display: inline-block;
+}
+
+/* Add styles for the toggle button and sidebar animation */
+
+.toggle-button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 3;
+}
+
+.sidebar.closed {
+  width: 0;
+}
+
+.sidebar.closed .menu-item span {
+  display: none;
+}
+
+.sidebar:hover {
+  width: 200px;
+}
+
+.sidebar:hover .menu-item span {
+  display: inline-block;
+}
+
+.menu-item:nth-child(4) span {
+  font-size: 12px;
+}

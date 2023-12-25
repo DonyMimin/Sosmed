@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+  }
+  
+  .story-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .story-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+    overflow: hidden; /* Optional: hide overflowing parts of the image */
+  }
+  
+  .story-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    margin: auto; /* Center the image */
+  }
+  
+  
+
+  .back-button {
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #777;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-right: 10px;
+  }
+  
+  .back-button:hover {
+    background-color: #555;
+  }
+  
+  .story {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .profile-picture {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .username {
+    font-size: 18px;
+  }
+  
+  .story-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  
+  
+  .story-image.active {
+    display: block;
+  }
+  
+  .navigation {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .prev-button,
+  .next-button {
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .prev-button {
+    background-color: #777;
+  }
+  

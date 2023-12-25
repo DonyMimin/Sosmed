@@ -1,0 +1,338 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Main container */
+  .reels-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .story {
+    display: flex;
+    align-items: center;
+    margin-right: 18px;
+  }
+
+  .story img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  /* Individual reel item */
+  .reel-item {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 0;
+    padding-bottom: 56.25%; /* Aspect ratio 16:9 */
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  
+  /* Reel video */
+  .reel-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Reel details */
+  .reel-details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+  }
+  
+  /* Username */
+  .username {
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 10px;
+  }
+  
+  /* Reel actions */
+  .reel-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  /* Like and comment buttons */
+  .like-button,
+  .comment-button {
+    padding: 5px 10px;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .like-button:hover,
+  .comment-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+
+  
+.menu-item img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .menu-item.active img {
+    filter: brightness(0.5);
+  }
+  
+  .sidebar {
+    width: 80px;
+    background-color: #333;
+    color: #fff;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: width 0.3s;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+  }
+  
+  .menu-item:hover {
+    background-color: #555;
+  }
+  
+  .menu-item a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+  }
+  
+  .menu-item a span {
+    margin-top: 4px;
+  }
+  
+  .notification-icon {
+    position: relative;
+  }
+  
+  .notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: #fff;
+    font-size: 10px;
+    padding: 2px 4px;
+    border-radius: 50%;
+  }
+  
+  /* Add styles for the toggle button and popup */
+  
+  .toggle-button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 3;
+  }
+  
+  .notification-popup {
+    display: none;
+    position: fixed;
+    top: 180px; /* Adjust the top value as needed */
+    right: 120px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+    max-height: 300px; /* Adjust the max-height value as needed */
+    overflow-y: auto;
+  }
+  
+  .notification-popup.show {
+    display: block;
+  }
+  
+  .notification-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .notification-content img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .notification-content p {
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  #notification-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #notification-list li {
+    margin-bottom: 10px;
+  }
+  
+  
+  #close-popup {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Add media query for responsiveness */
+  
+  @media screen and (max-width: 800px) {
+    .container {
+      max-width: 100%;
+    }
+  
+    .sidebar {
+      width: 60px;
+    }
+  
+    .sidebar span {
+      display: none;
+    }
+  
+    .sidebar.closed {
+      width: 0;
+    }
+  
+    .sidebar.closed span {
+      display: none;
+    }
+  
+    .sidebar:hover {
+      width: 200px;
+    }
+  
+    .sidebar:hover span {
+      display: inline-block;
+    }
+  }
+  
+  /* Existing styles */
+  
+  .sidebar {
+    width: 80px;
+    background-color: #333;
+    color: #fff;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: width 0.3s;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .menu-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+  }
+  
+  .menu-item img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
+  
+  .menu-item span {
+    display: inline-block;
+  }
+  
+  /* Add styles for the toggle button and sidebar animation */
+  
+  .toggle-button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 3;
+  }
+  
+  .sidebar.closed {
+    width: 0;
+  }
+  
+  .sidebar.closed .menu-item span {
+    display: none;
+  }
+  
+  .sidebar:hover {
+    width: 200px;
+  }
+  
+  .sidebar:hover .menu-item span {
+    display: inline-block;
+  }
+  
+  .menu-item:nth-child(4) span {
+    font-size: 12px;
+  }
+  
